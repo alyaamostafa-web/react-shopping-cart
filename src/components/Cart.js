@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import formatCurrency from "./../Util";
 
 export default class Cart extends Component {
   render() {
@@ -38,7 +39,10 @@ export default class Cart extends Component {
           <div className="cart">
             <div className="total">
               <div>
-                Total: ${cartItems.reduce((a, c) => a + c.price * c.count, 0)}
+                Total:{" "}
+                {formatCurrency(
+                  cartItems.reduce((a, c) => a + c.price * c.count, 0)
+                )}
               </div>
               <button
                 // onClick={() => {
